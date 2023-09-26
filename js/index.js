@@ -22,9 +22,9 @@ showData = (data) => {
 async function getData() {
   let url;
   if (search.value !== '') {
-    url = `https://api.unsplash.com/search/photos?query=${search.value}&per_page=30&tag_mode=all&client_id=-CevN3rQ1iZfiXge0_fD4-gKZ1jjOrNGpMxRKOyZUxA`;
+    url = `https://api.unsplash.com/search/photos?query=${search.value}&per_page=30&tag_mode=all&extras=url_m&client_id=-CevN3rQ1iZfiXge0_fD4-gKZ1jjOrNGpMxRKOyZUxA`;
   } else {
-    url = `https://api.unsplash.com/search/photos?query=random&per_page=9&tag_mode=all&client_id=-CevN3rQ1iZfiXge0_fD4-gKZ1jjOrNGpMxRKOyZUxA`;
+    url = `https://api.unsplash.com/search/photos?query=random&per_page=9&tag_mode=all&extras=url_m&client_id=-CevN3rQ1iZfiXge0_fD4-gKZ1jjOrNGpMxRKOyZUxA`;
   }
   const res = await fetch(url);
   const data = await res.json();

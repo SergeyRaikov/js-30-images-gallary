@@ -1,5 +1,6 @@
 .container {
     max-width: 128rem;
+    padding: 0 1.5rem;
     margin: auto;
 
 }
@@ -8,7 +9,7 @@
     min-height: 7rem;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
 
 }
