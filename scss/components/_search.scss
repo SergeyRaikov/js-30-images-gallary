@@ -3,6 +3,8 @@
     width: 35rem;
     font-size: 2rem;
     color: #000000;
+    border: 0.1rem solid #dddddd;
+    border-radius: 2.5rem;
     cursor: pointer;
 }
 
@@ -11,28 +13,31 @@
     height: 3rem;
     padding: 2rem 1.5rem;
     outline: none;
-    border: 0.1rem solid #dddddd;
+    border: none;
     border-radius: 2.5rem;
     font-size: 2rem;
     cursor: text;
     transition: all .3s ease-in-out;
 
-    &:focus {
+    &:focus.search{
         color:#7fc769;
-        box-shadow: 1px 1px 1px .5px #ff5e00;
+        box-shadow: 5px 5px 5px #ff5e00;
         border: 0.5px;
     }
 
 }
 
-.fa-magnifying-glass {
+.search__icon {
+    fill:#dddddd;
     position: absolute;
     top: 20%;
     right: 2rem;
-    font-size: 2.5rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url("../assets/img/search-icon.svg") center no-repeat;
     transition: .5s linear;
 
-    &:hover {
-        color: #ff5e00;
+    &:hover.search__icon {
+        
     }
 }

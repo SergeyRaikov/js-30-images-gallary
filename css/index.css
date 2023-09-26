@@ -8,11 +8,12 @@
   min-height: 7rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .container--footer {
   width: 100%;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -117,6 +118,8 @@ body {
   width: 35rem;
   font-size: 2rem;
   color: #000000;
+  border: 0.1rem solid #dddddd;
+  border-radius: 2.5rem;
   cursor: pointer;
 }
 
@@ -125,29 +128,28 @@ body {
   height: 3rem;
   padding: 2rem 1.5rem;
   outline: none;
-  border: 0.1rem solid #dddddd;
+  border: none;
   border-radius: 2.5rem;
   font-size: 2rem;
   cursor: text;
   transition: all 0.3s ease-in-out;
 }
-.search:focus {
+.search:focus.search {
   color: #7fc769;
-  box-shadow: 1px 1px 1px 0.5px #ff5e00;
+  box-shadow: 5px 5px 5px #ff5e00;
   border: 0.5px;
 }
 
-.fa-magnifying-glass {
+.search__icon {
+  fill: #dddddd;
   position: absolute;
   top: 20%;
   right: 2rem;
-  font-size: 2.5rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("../assets/img/search-icon.svg") center no-repeat;
   transition: 0.5s linear;
 }
-.fa-magnifying-glass:hover {
-  color: #ff5e00;
-}
-
 .grid {
   width: 100%;
   padding: 0 0 1rem;
@@ -164,6 +166,10 @@ body {
   height: 21.4rem;
   margin: 1rem 0 0;
   border-radius: 2%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
 }
 
 @media (max-width: 792px) {
