@@ -182,7 +182,7 @@ body {
 
 .grid {
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
