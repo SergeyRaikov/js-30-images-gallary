@@ -142,18 +142,47 @@ body {
 }
 
 .search__icon {
-  fill: #dddddd;
   position: absolute;
   top: 20%;
   right: 2rem;
   width: 2.4rem;
   height: 2.4rem;
-  background: url("../assets/img/search-icon.svg") center no-repeat;
+  background: url("../assets/img/search-grey.svg") center no-repeat;
+  transition: 0.5s linear;
+  background-size: cover;
+}
+.search__icon:hover {
+  background: url("../assets/img/search-color.svg") center no-repeat;
+  background-size: cover;
+}
+
+.clear-search {
+  display: none;
+  position: absolute;
+  top: 20%;
+  right: 5rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("../assets/img/close-grey.svg") center no-repeat;
+  background-size: cover;
   transition: 0.5s linear;
 }
+.clear-search:hover {
+  background: url("../assets/img/close-color.svg") center no-repeat;
+  background-size: cover;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
 .grid {
   width: 100%;
-  padding: 0 0 1rem;
+  padding: 0 1rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;

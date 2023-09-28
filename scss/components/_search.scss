@@ -19,8 +19,8 @@
     cursor: text;
     transition: all .3s ease-in-out;
 
-    &:focus.search{
-        color:#7fc769;
+    &:focus.search {
+        color: #7fc769;
         box-shadow: 5px 5px 5px #ff5e00;
         border: 0.5px;
     }
@@ -28,16 +28,44 @@
 }
 
 .search__icon {
-    fill:#dddddd;
     position: absolute;
     top: 20%;
     right: 2rem;
     width: 2.4rem;
     height: 2.4rem;
-    background: url("../assets/img/search-icon.svg") center no-repeat;
+    background: url("../assets/img/search-grey.svg") center no-repeat;
+    transition: .5s linear;
+    background-size: cover;
+
+    &:hover {
+        background: url("../assets/img/search-color.svg") center no-repeat;
+        background-size: cover;
+    }
+}
+
+.clear-search {
+    display: none;
+    position: absolute;
+    top: 20%;
+    right: 5rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url("../assets/img/close-grey.svg") center no-repeat;
+    background-size: cover;
     transition: .5s linear;
 
-    &:hover.search__icon {
-        
+    &:hover {
+        background: url("../assets/img/close-color.svg") center no-repeat;
+        background-size: cover;
     }
+}
+
+.hidden {
+    display: none;
+
+}
+
+.visible {
+    display: block;
+
 }

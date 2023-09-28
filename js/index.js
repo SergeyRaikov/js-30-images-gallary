@@ -1,5 +1,26 @@
 const grid = document.querySelector('.grid');
 const search = document.querySelector('.search');
+const searchIcon = document.querySelector('.search__icon');
+const clearSerhcIcon = document.querySelector('.clear-search');
+
+const hideSearchIcon = () => {
+  searchIcon.classList.add('hidden');
+};
+const showSearchIcon = () => {
+  searchIcon.classList.remove('hidden');
+};
+const showClearIcon = () => {
+  clearSerhcIcon.classList.add('visible');
+};
+const hideClearIcon = () => {
+  clearSerhcIcon.classList.remove('visible');
+};
+
+
+
+const clearSearchForm = () => {
+  search.value = '';
+};
 
 const clearGrid = () => {
   grid.innerHTML = '';
@@ -37,5 +58,13 @@ search.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     clearGrid();
     getData();
+    hideSearchIcon();
+    showClearIcon();
   }
+});
+
+clearSerhcIcon.addEventListener('click', () => {
+  clearSearchForm();
+  hideClearIcon();
+  showSearchIcon();
 });
