@@ -46,8 +46,8 @@
 .clear-search {
     display: none;
     position: absolute;
-    top: 20%;
-    right: 5rem;
+    top: calc(50% - 1.2rem);
+    right: 1rem;
     width: 2.4rem;
     height: 2.4rem;
     background: url("../assets/img/close-grey.svg") center no-repeat;

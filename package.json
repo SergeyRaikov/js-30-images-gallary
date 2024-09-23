@@ -1,0 +1,14 @@
+{
+  "name": "js3-image-galery",
+  "version": "1.0.0",
+  "description": "study project Rs scool",
+  "main": "index.js",
+  "scripts": {
+    "style": " sass --watch scss/index.scss css/index.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.79.3"
+  }
+}
