@@ -1,14 +1,15 @@
 //Layouts
-@import "./layouts/_container";
-@import "./layouts/_header";
-@import "./layouts/main";
-@import "./layouts/footer";
+@import './layouts/_container';
+@import './layouts/_header';
+@import './layouts/main';
+@import './layouts/footer';
 //Base
-@import "./base/base";
+@import './base/base';
 
 //Components
 
-@import "./components/logo";
-@import "./components/_search";
-@import "./components//grid";
-
+@import './components/logo';
+@import './components/search';
+@import './components/grid';
+@import './components/dark-mode';
+@import './components/spiner';

@@ -8,3 +8,9 @@ padding: 2rem 0;
    padding-right: 2rem;
 color: #ff5e00;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

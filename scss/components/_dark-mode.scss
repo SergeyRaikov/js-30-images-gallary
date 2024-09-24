@@ -1,0 +1,30 @@
+.theme-mode-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 100%;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.fa-moon {
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.fa-sun {
+    font-size: 1.5rem;
+    color: rgb(235, 146, 20);
+}
+.dark-mode {
+  background: #000;
+  color: #ccc;
+}
+
+.dark-mode_footer {
+  background: #6d6262;
+}

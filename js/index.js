@@ -2,6 +2,20 @@ const grid = document.querySelector('.grid');
 const search = document.querySelector('.search');
 const searchIcon = document.querySelector('.search__icon');
 const clearSerhcIcon = document.querySelector('.clear-search');
+const body = document.body;
+const footer = document.querySelector('footer');
+const modeButton = document.querySelector('.theme-mode-btn');
+let isLigthMode = true;
+const darkModeInnerHTML = '<i class="fa-solid fa-moon"></i>';
+const lightModeInnerHTML = '<i class="fa-solid fa-sun yellow"></i>';
+const loaderContainer = document.querySelector('.spiner-container');
+console.log(loaderContainer);
+
+const showLoaderSpiner = () => {
+  loaderContainer.style.display = 'none'
+  console.log('Loading')
+}
+window.addEventListener('load', showLoaderSpiner)
 
 const hideSearchIcon = () => {
   searchIcon.classList.add('hidden');
@@ -16,8 +30,6 @@ const hideClearIcon = () => {
   clearSerhcIcon.classList.remove('visible');
 };
 
-
-
 const clearSearchForm = () => {
   search.value = '';
 };
@@ -27,17 +39,25 @@ const clearGrid = () => {
 };
 
 showData = (data) => {
+  console.log(data);
   clearGrid();
-  const imageNodes = [];
-  for (let i = 0; i < data.results.length; i++) {
-    imageNodes[i] = document.createElement('div');
-    imageNodes[i].className = 'grid__img';
-    imageNodes[i].style.backgroundImage =
-      'url(' + data.results[i].urls.raw + ')';
-    imageNodes[i].addEventListener('click', () => {
-      window.open(data.results[i].links.download, '_blank');
-    });
-    grid.appendChild(imageNodes[i]);
+  if (data.total !== 0) {
+    const imageNodes = [];
+    for (let i = 0; i < data.results.length; i++) {
+      imageNodes[i] = document.createElement('div');
+      imageNodes[i].className = 'grid__img';
+      imageNodes[i].style.backgroundImage =
+        'url(' + data.results[i].urls.small + ')';
+      imageNodes[i].addEventListener('click', () => {
+        window.open(data.results[i].links.download, '_blank');
+      });
+      grid.appendChild(imageNodes[i]);
+    }
+  } else {
+    console.log('Images not found');
+    const fallMessage = document.createElement('div');
+    fallMessage.textContent = 'Images not found';
+    grid.appendChild(fallMessage);
   }
 };
 async function getData() {
@@ -68,3 +88,24 @@ clearSerhcIcon.addEventListener('click', () => {
   hideClearIcon();
   showSearchIcon();
 });
+
+const addDarkMode = () => {
+  modeButton.innerHTML = darkModeInnerHTML;
+  isLigthMode = false;
+  body.classList.add('dark-mode');
+  footer.classList.add('dark-mode_footer');
+};
+
+const removeDarkMode = () => {
+  modeButton.innerHTML = lightModeInnerHTML;
+  isLigthMode = true;
+  body.classList.remove('dark-mode');
+  footer.classList.remove('dark-mode_footer');
+};
+
+const switchMode = () => {
+  if (isLigthMode) addDarkMode();
+  else removeDarkMode();
+};
+
+modeButton.addEventListener('click', switchMode);
