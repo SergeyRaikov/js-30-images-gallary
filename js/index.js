@@ -9,13 +9,11 @@ let isLigthMode = true;
 const darkModeInnerHTML = '<i class="fa-solid fa-moon"></i>';
 const lightModeInnerHTML = '<i class="fa-solid fa-sun yellow"></i>';
 const loaderContainer = document.querySelector('.spiner-container');
-console.log(loaderContainer);
 
 const showLoaderSpiner = () => {
-  loaderContainer.style.display = 'none'
-  console.log('Loading')
-}
-window.addEventListener('load', showLoaderSpiner)
+  loaderContainer.style.display = 'none';
+};
+window.addEventListener('load', showLoaderSpiner);
 
 const hideSearchIcon = () => {
   searchIcon.classList.add('hidden');
@@ -39,12 +37,14 @@ const clearGrid = () => {
 };
 
 showData = (data) => {
-  console.log(data);
   clearGrid();
   if (data.total !== 0) {
+    console.log(data.results)
     const imageNodes = [];
     for (let i = 0; i < data.results.length; i++) {
       imageNodes[i] = document.createElement('div');
+      imageNodes[i].innerHTML =
+        ` <a download ="${data.results[i].urls.full}" ><i class="fa-solid fa-download"></i></a>`;
       imageNodes[i].className = 'grid__img';
       imageNodes[i].style.backgroundImage =
         'url(' + data.results[i].urls.small + ')';
@@ -109,3 +109,5 @@ const switchMode = () => {
 };
 
 modeButton.addEventListener('click', switchMode);
+
+
